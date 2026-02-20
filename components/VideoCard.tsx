@@ -15,10 +15,14 @@ export function VideoCard({ video, onPlay }: VideoCardProps) {
 
   return (
   <div onClick={() => onPlay(video)} style={{ cursor: "pointer", marginBottom: "20px" }}>
-    <img
+    <img 
       src={thumbnailUrl}
       alt={video.title}
       style={{ width: "100%", maxWidth: "400px" }}
+      onError={(e) => {
+        (e.target as HTMLImageElement).src =
+        `https://img.youtube.com/vi/${video.id}/hqdefault.jpg`;
+        }}
     />
     <h3>{video.title}</h3>
     <p>{video.channel}</p>
