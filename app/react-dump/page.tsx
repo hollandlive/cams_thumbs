@@ -1,13 +1,23 @@
 "use client";
 
-function MyButton() {
+import { useState } from "react";
+
+function CounterButton() {
+  const [count, setCount] = useState(0);
+
+   // console.log (count);
+
+
   function handleClick() {
-    alert("You clicked me!11");
+    console.log("clicked " + count);
+    setCount(count + 1);
   }
+
+ // console.log (count);
 
   return (
     <button onClick={handleClick}>
-      Click me
+      You clicked {count} times
     </button>
   );
 }
@@ -15,8 +25,8 @@ function MyButton() {
 export default function ReactDumpPage() {
   return (
     <div>
-      <h1>React Dump</h1>
-      <MyButton />
+      <h1>Counter Example</h1>
+      <CounterButton />
     </div>
   );
 }
