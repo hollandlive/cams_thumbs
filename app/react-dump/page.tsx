@@ -5,12 +5,10 @@ import { useState } from "react";
 function CounterButton() {
   const [count, setCount] = useState(0);
 
-   // console.log (count);
-
 
   function handleClick() {
-    console.log("clicked " + count);
-    setCount(count + 1);
+    // console.log("clicked " + count);
+    setCount(prev => prev + 1);
   }
 
  // console.log (count);
@@ -22,11 +20,29 @@ function CounterButton() {
   );
 }
 
+function ToggleButton() {
+  const [isOn, setIsOn] = useState(false);
+
+  function handleToggle() {
+    setIsOn(prev => !prev);
+  }
+
+  return (
+    <button onClick={handleToggle}>
+      {isOn ? "ON 🔥" : "OFF ❄️"}
+    </button>
+  );
+}
+
 export default function ReactDumpPage() {
   return (
     <div>
       <h1>Counter Example</h1>
       <CounterButton />
+      <h2>
+        <ToggleButton />
+      </h2>
     </div>
+    
   );
 }
