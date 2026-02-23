@@ -20,15 +20,27 @@ function CounterButton() {
   );
 }
 
+
 function ToggleButton() {
   const [isOn, setIsOn] = useState(false);
 
   function handleToggle() {
+    // console.log (isOn);
     setIsOn(prev => !prev);
   }
+// console.log("toggle is " + isOn);
 
   return (
-    <button onClick={handleToggle}>
+    <button
+      onClick={handleToggle}
+      style={{
+        backgroundColor: isOn ? "green" : "gray",
+        color: "white",
+        padding: "10px 20px",
+        border: "none",
+        cursor: "pointer"
+      }}
+    >
       {isOn ? "ON 🔥" : "OFF ❄️"}
     </button>
   );
@@ -46,3 +58,8 @@ export default function ReactDumpPage() {
     
   );
 }
+
+// // vanilla JS
+// if (isOn) {
+//   document.body.style.backgroundColor = "green"
+// }
