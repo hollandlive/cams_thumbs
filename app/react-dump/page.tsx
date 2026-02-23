@@ -25,7 +25,7 @@ function ToggleButton() {
   const [isOn, setIsOn] = useState(false);
 
   function handleToggle() {
-    // console.log (isOn);
+    console.log (isOn);
     setIsOn(prev => !prev);
   }
 // console.log("toggle is " + isOn);
@@ -41,7 +41,8 @@ function ToggleButton() {
         cursor: "pointer"
       }}
     >
-      {isOn ? "ON 🔥" : "OFF ❄️"}
+      {isOn ? "System is Active 🟢" : "System is Sleeping 😴"}
+
     </button>
   );
 }
