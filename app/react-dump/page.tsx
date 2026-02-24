@@ -21,6 +21,8 @@ function CounterButton() {
 }
 
 
+
+
 function ToggleButton() {
   const [isOn, setIsOn] = useState(false);
 
@@ -47,6 +49,32 @@ function ToggleButton() {
   );
 }
 
+
+
+function NameInput() {
+  const [name, setName] = useState("");
+
+  function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
+    setName(event.target.value);
+  }
+
+  return (
+    <div style={{ marginTop: "20px" }}>
+      <input
+        type="text"
+        value={name}
+        onChange={handleChange}
+        placeholder="Type your name..."
+        style={{ padding: "8px" }}
+      />
+
+      <p>Hello, {name}</p>
+    </div>
+  );
+}
+
+
+
 export default function ReactDumpPage() {
   return (
     <div>
@@ -54,6 +82,9 @@ export default function ReactDumpPage() {
       <CounterButton />
       <h2>
         <ToggleButton />
+      </h2>
+      <h2>
+        <NameInput />
       </h2>
     </div>
     
