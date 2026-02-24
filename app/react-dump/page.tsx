@@ -51,6 +51,7 @@ function ToggleButton() {
 
 
 
+
 function NameInput() {
   const [name, setName] = useState("");
 
@@ -86,6 +87,8 @@ export default function ReactDumpPage() {
       <h2>
         <NameInput />
       </h2>
+      <br>
+      </br>
     </div>
     
   );
