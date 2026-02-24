@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FormContainer from "./FormContainer";
 
 function CounterButton() {
   const [count, setCount] = useState(0);
@@ -98,6 +99,13 @@ export default function ReactDumpPage() {
 
       <h2>Parent / Child Example</h2>
       <Parent />
+      <br />
+      <br />
+      <h4>Form Containerrrr</h4>
+      <div>
+        <FormContainer />
+      </div>
+
     </div>
   );
 }
