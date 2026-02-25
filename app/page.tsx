@@ -1,10 +1,31 @@
 "use client";
 
-
+import { useState } from "react";
 import { cameras } from "@/data/cameras";
+import CameraCard from "@/components/CameraCard";
 
+export default function Page() {
+  const [searchTerm, setSearchTerm] = useState("");
 
+  const filteredCameras = cameras.filter((camera) =>
+    camera.city.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
+  return (
+    <div>
+      <input
+        type="text"
+        placeholder="Search by city..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+
+      {filteredCameras.map((camera) => (
+        <CameraCard key={camera.id} camera={camera} />
+      ))}
+    </div>
+  );
+}
 
 
 
