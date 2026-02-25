@@ -8,27 +8,27 @@ export interface Video {
 
 export const videos: Video[] = [
   {
-    id: "dQw4w9WgXcQ",
-    title: "Rick Astley - Never Gonna Give You Up",
-    channel: "Rick Astley",
-    views: "1.5B views",
+    id: "5ohmskte-Ts",
+    title: "Rotterdam Make It Happen",
+    channel: "Rotterdam",
+    views: "10k views",
   },
   {
-    id: "9bZkp7q19f0",
-    title: "PSY - GANGNAM STYLE",
-    channel: "officialpsy",
+    id: "GQZxPFy1yVE",
+    title: "Rotterdam Skylin",
+    channel: "Holland",
     views: "5B views",
   },
   {
-    id: "kJQP7kiw5Fk",
-    title: "Luis Fonsi - Despacito ft. Daddy Yankee",
-    channel: "Luis Fonsi",
+    id: "S2ETuyd4BDk",
+    title: "Benidorm Spain",
+    channel: "Benidorm",
     views: "8.3B views",
   },
   {
-    id: "JGwWNGJdvx8",
-    title: "Ed Sheeran - Shape of You",
-    channel: "Ed Sheeran",
+    id: "okQk7QUfDo8",
+    title: "Airport Cam",
+    channel: "World",
     views: "6.2B views",
   },
   {
