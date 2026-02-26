@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { cameras } from "@/data/cameras";
-import CameraCard from "@/components/CameraCard";
+import SearchBar from "@/components/SearchBar";
+import CameraList from "@/components/CameraList";
 
 export default function Page() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -12,21 +13,12 @@ export default function Page() {
   );
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search by city..."
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
-
-      {filteredCameras.map((camera) => (
-        <CameraCard key={camera.id} camera={camera} />
-      ))}
+    <div style={{ padding: "40px" }}>
+      <SearchBar value={searchTerm} onChange={setSearchTerm} />
+      <CameraList cameras={filteredCameras} />
     </div>
   );
 }
-
 
 
 
