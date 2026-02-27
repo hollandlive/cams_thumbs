@@ -1,17 +1,37 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { cameras } from "@/data/cameras";
 import SearchBar from "@/components/SearchBar";
 import CameraList from "@/components/CameraList";
 
 export default function Page() {
+  // -------------------------
+  // DAY 4: Search & Filter
+  // -------------------------
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredCameras = cameras.filter((camera) =>
     camera.city.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
+  // -------------------------
+  // DAY 5: API Fetch (background)
+  // -------------------------
+  const [tests, setTests] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/tests")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("API response:", data); // background log
+        setTests(data); // stored but not rendered
+      });
+  }, []);
+
+  // -------------------------
+  // RENDER
+  // -------------------------
   return (
     <div style={{ padding: "40px" }}>
       <SearchBar value={searchTerm} onChange={setSearchTerm} />
@@ -19,8 +39,6 @@ export default function Page() {
     </div>
   );
 }
-
-
 
 
 
@@ -47,13 +65,6 @@ export default function Page() {
 //     </div>
 //   );
 // }
-
-
-
-
-
-
-
 
 
 
