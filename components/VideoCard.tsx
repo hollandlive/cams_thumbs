@@ -1,6 +1,6 @@
 "use client";
 
-import { Play, ExternalLink } from "lucide-react";
+// import { Play, ExternalLink } from "lucide-react";
 
 import type { Video } from "@/data/videos";
 
