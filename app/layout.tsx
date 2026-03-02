@@ -1,11 +1,20 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 
+// fonts
+// import { Inter } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
+
+// css
 import "./globals.css";
 
-const inter = Inter({
+// const inter = Inter({
+//   subsets: ["latin"],
+//   weight: ["400", "600", "700"],
+// });
+
+const space = Space_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "700"],
 });
 
 export const metadata: Metadata = {
@@ -19,7 +28,7 @@ export const metadata: Metadata = {
     "Athens live cam",
     "Santorini live camera",
   ],
-  authors: [{ name: "Artem" }],
+  authors: [{ name: "Artem Aksenovs" }],
   openGraph: {
     title: "Greece Live Cams",
     description:
@@ -35,7 +44,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={space.className}>
         {children}
       </body>
     </html>
