@@ -29,6 +29,7 @@ export default function Page() {
 
   return (
     <div style={{ padding: "40px" }}>
+      <h1>Live Webcams in Greece</h1>
       <SearchBar value={searchTerm} onChange={setSearchTerm} />
       <CameraList cameras={filteredCameras} />
     </div>
