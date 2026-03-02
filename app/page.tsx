@@ -27,11 +27,19 @@ export default function Page() {
       });
   }, []);
 
-  return (
-    <div style={{ padding: "40px" }}>
-      <h1>Live Webcams in Greece</h1>
+return (
+  <div>
+
+    <section className="hero">
+      <h1>Greece Live Cams</h1>
+      <p>Watch beaches and cities in real time</p>
+    </section>
+
+    <div className="container">
       <SearchBar value={searchTerm} onChange={setSearchTerm} />
       <CameraList cameras={filteredCameras} />
     </div>
-  );
+
+  </div>
+);
 }
