@@ -1,21 +1,22 @@
 import type { Metadata } from "next";
 
 // fonts
-// import { Inter } from "next/font/google";
-import { Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk } from "next/font/google";
 
-// css
-import "./globals.css";
-
-// const inter = Inter({
-//   subsets: ["latin"],
-//   weight: ["400", "600", "700"],
-// });
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "700"],
+  variable: "--font-inter",
+});
 
 const space = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "700"],
+  variable: "--font-space",
 });
+
+// css
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Greece Live Cams – Beaches & Cities in Real Time",
@@ -44,7 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={space.className}>
+      <body className={`${space.variable} ${inter.variable}`}>
         {children}
       </body>
     </html>
