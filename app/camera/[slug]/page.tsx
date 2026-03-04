@@ -1,14 +1,14 @@
 import { cameras } from "@/data/cameras";
 import { notFound } from "next/navigation";
 
-interface Props {
-  params: {
-    slug: string;
-  };
-}
+export default async function CameraPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
-export default async function CameraPage({ params }: Props) {
-  const camera = cameras.find((cam) => cam.slug === params.slug);
+  const camera = cameras.find((cam) => cam.slug === slug);
 
   if (!camera) {
     return notFound();
@@ -22,8 +22,9 @@ export default async function CameraPage({ params }: Props) {
       <iframe
         width="100%"
         height="500"
-        src={`https://www.youtube.com/embed/${camera.youtubeId}`}
+        src={`https://www.youtube.com/embed/${camera.youtubeId}?autoplay=1&mute=1`}
         title={camera.title}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
     </div>
