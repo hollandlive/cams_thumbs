@@ -19,6 +19,7 @@ const space = Space_Grotesk({
 import "./globals.css";
 
 export const metadata: Metadata = {
+  // metadataBase: new URL("http://localhost:3000"),
   title: "Greece Live Cams – Beaches & Cities in Real Time",
   description:
     "Watch live webcams from Greece. Explore beaches, cities, and tourist hotspots in real time.",
@@ -32,8 +33,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Artem Aksenovs" }],
   openGraph: {
     title: "Greece Live Cams",
-    description:
-      "Live streaming webcams from Greek cities and beaches.",
+    description: "Live streaming webcams from Greek cities and beaches.",
     type: "website",
   },
 };
@@ -45,9 +45,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${space.variable} ${inter.variable}`}>
-        {children}
-      </body>
+      <body className={`${space.variable} ${inter.variable}`}>{children}</body>
     </html>
   );
 }
