@@ -59,6 +59,10 @@ export default async function CameraPage({
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
+
+      <p style={{ marginTop: "20px", maxWidth: "700px" }}>
+        {camera.description}
+      </p>
     </div>
   );
 }
