@@ -1,5 +1,6 @@
 import { cameras } from "@/data/cameras";
 import { notFound } from "next/navigation";
+import Link from "next/link";
 
 export async function generateMetadata({
   params,
@@ -46,9 +47,14 @@ export default async function CameraPage({
     return notFound();
   }
 
+  const relatedCameras = cameras.filter(
+    (cam) => cam.city === camera.city && cam.slug !== slug,
+  );
+
   return (
     <div style={{ padding: "40px" }}>
       <h1>{camera.title}</h1>
+
       <p>{camera.city}</p>
 
       <iframe
@@ -63,6 +69,41 @@ export default async function CameraPage({
       <p style={{ marginTop: "20px", maxWidth: "700px" }}>
         {camera.description}
       </p>
+
+      {relatedCameras.length > 0 && (
+        <>
+          <h2 style={{ marginTop: "40px" }}>More webcams in {camera.city}</h2>
+
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              flexWrap: "wrap",
+              marginTop: "20px",
+            }}
+          >
+            {relatedCameras.map((cam) => (
+              <Link
+                key={cam.slug}
+                href={`/camera/${cam.slug}`}
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                <div style={{ width: "200px" }}>
+                  <img
+                    src={cam.image}
+                    alt={cam.title}
+                    style={{
+                      width: "100%",
+                      borderRadius: "8px",
+                    }}
+                  />
+                  <p>{cam.title}</p>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 }
