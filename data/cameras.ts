@@ -2,8 +2,7 @@ export interface Camera {
   id: number;
   city: string;
   title: string;
-  image: string;
-    slug: string;
+  slug: string;
   youtubeId: string;
   description: string;
 }
@@ -14,7 +13,6 @@ export const cameras: Camera[] = [
     id: 1,
     title: "Syntagma Square",
     city: "Athens",
-    image: "/pic1.jpg",
     slug: "athens-syntagma",
     youtubeId: "lV5h9Ql_IcE",
     description: "Watch the live webcam from Syntagma Square, the central square of Athens located in front of the Greek Parliament building",
@@ -68,30 +66,30 @@ export const cameras: Camera[] = [
 },
 {
   id: 7,
-  title: "Acropolis View",
+  title: "Acropolis View-2",
   city: "Athens",
   image: "/pic2.jpg",
-  slug: "athens-acropolis",
+  slug: "athens-acropolis-11",
   youtubeId: "VdkSC_KLsnY",
   description:
     "Live view of the Acropolis hill and Parthenon in Athens, Greece."
 },
 {
   id: 8,
-  title: "Acropolis View",
+  title: "Acropolis View-3",
   city: "Athens",
   image: "/pic3.jpg",
-  slug: "athens-acropolis",
+  slug: "athens-acropolis-11",
   youtubeId: "VdkSC_KLsnY",
   description:
     "Live view of the Acropolis hill and Parthenon in Athens, Greece."
 },
 {
   id: 9,
-  title: "Acropolis View",
+  title: "Acropolis View-4",
   city: "Athens",
   image: "/pic2.jpg",
-  slug: "athens-acropolis",
+  slug: "athens-acropolis-2",
   youtubeId: "VdkSC_KLsnY",
   description:
     "Live view of the Acropolis hill and Parthenon in Athens, Greece."
@@ -121,7 +119,7 @@ export const cameras: Camera[] = [
   title: "Acropolis View",
   city: "Athens",
   image: "/pic4.jpg",
-  slug: "athens-acropolis",
+  slug: "athens-acropolis-111",
   youtubeId: "VdkSC_KLsnY",
   description:
     "Live view of the Acropolis hill and Parthenon in Athens, Greece."
