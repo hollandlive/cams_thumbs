@@ -11,7 +11,7 @@ export default function Page() {
   const [loading, setLoading] = useState(true);
 
   const filteredCameras = cameras.filter((camera) =>
-    camera.city.toLowerCase().includes(searchTerm.toLowerCase())
+    camera.city.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   // Day 5 - API Fetch (background)
@@ -27,19 +27,17 @@ export default function Page() {
       });
   }, []);
 
-return (
-  <div>
+  return (
+    <div>
+      <section className="hero">
+        <h1>Greece Live Cams</h1>
+        <p>Watch beaches and cities in real time</p>
+      </section>
 
-    <section className="hero">
-      <h1>Greece Live Cams</h1>
-      <p>Watch beaches and cities in real time</p>
-    </section>
-
-    <div className="container">
-      <SearchBar value={searchTerm} onChange={setSearchTerm} />
-      <CameraList cameras={filteredCameras} />
+      <div className="container">
+        <SearchBar value={searchTerm} onChange={setSearchTerm} />
+        <CameraList cameras={filteredCameras} />
+      </div>
     </div>
-
-  </div>
-);
+  );
 }
