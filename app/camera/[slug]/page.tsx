@@ -90,7 +90,7 @@ export default async function CameraPage({
               >
                 <div style={{ width: "200px" }}>
                   <img
-                    src={cam.image}
+                    src={`https://img.youtube.com/vi/${cam.youtubeId}/hqdefault.jpg`}
                     alt={cam.title}
                     style={{
                       width: "100%",
