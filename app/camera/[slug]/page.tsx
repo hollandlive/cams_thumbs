@@ -25,7 +25,7 @@ export async function generateMetadata({
       description: `Watch the live webcam from ${camera.title} in ${camera.city}.`,
       images: [
         {
-          url: camera.image,
+          url: `https://img.youtube.com/vi/${camera.youtubeId}/hqdefault.jpg`,
           width: 1200,
           height: 630,
         },

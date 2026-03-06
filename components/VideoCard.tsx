@@ -2,6 +2,8 @@
 
 // import { Play, ExternalLink } from "lucide-react";
 
+import { Camera } from "@/data/cameras";
+
 import type { Video } from "@/data/videos";
 
 interface VideoCardProps {
