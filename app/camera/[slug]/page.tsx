@@ -1,6 +1,7 @@
 import { cameras } from "@/data/cameras";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import ViewCounter from "@/components/ViewCounter";
 
 export async function generateMetadata({
   params,
@@ -65,6 +66,8 @@ export default async function CameraPage({
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
       />
+
+      <ViewCounter slug={slug} />
 
       <p style={{ marginTop: "20px", maxWidth: "700px" }}>
         {camera.description}
