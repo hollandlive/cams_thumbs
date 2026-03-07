@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Camera } from "@/data/cameras";
 
@@ -8,6 +11,18 @@ type CameraCardProps = {
 };
 
 export default function CameraCard({ camera }: CameraCardProps) {
+  const [views, setViews] = useState<number | null>(null);
+
+  useEffect(() => {
+    async function fetchViews() {
+      const res = await fetch(`/api/views?slug=${camera.slug}`);
+      const data = await res.json();
+      setViews(data.views);
+    }
+
+    fetchViews();
+  }, [camera.slug]);
+
   return (
     <Link href={`/camera/${camera.slug}`}>
       <div className="card">
@@ -28,6 +43,7 @@ export default function CameraCard({ camera }: CameraCardProps) {
 
         <h3>{camera.title}</h3>
         <p>{camera.city}</p>
+        {views !== null && <p>👁 {views} views</p>}
       </div>
     </Link>
   );
